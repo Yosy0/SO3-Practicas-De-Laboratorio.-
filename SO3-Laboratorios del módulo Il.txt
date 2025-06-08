@@ -1,0 +1,31 @@
+Comando principal para la fecha y hora.
+
+echo %date% %time%
+
+PUNTO 1.
+su
+dnf upgrade -y
+dnf update -y
+dnf repolist
+dnf repolist all
+
+
+PUNTO 2.
+dnf search bashtop
+
+PUNTO 3.
+dnf install snapd
+systemctl enable --now snapd.socket
+systemctl is-enabled snapd.socket
+snap install bashtop
+snap run bashtop
+
+
+PUNTO 4. 
+snap list
+snap remove bashtop
+dnf remove snapd
+
+
+PUNTO 5.
+dnf autoremove snapd

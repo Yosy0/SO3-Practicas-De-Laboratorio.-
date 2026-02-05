@@ -1,2 +1,3 @@
-SO3-Comandos usados Practica 1: Instalación del Sistema Operativo (Rocky Linux).
+SO3-Comandos usados Practica 1: Instalación del Sistema Operativo (RED HAT LINUX).
 echo %date% %time%
+nomo\deset

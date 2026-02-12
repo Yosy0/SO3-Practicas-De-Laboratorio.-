@@ -3,10 +3,8 @@ Comando principal para la fecha y hora.
 echo %date% %time%
 
 PUNTO 1.
-su
-dnf upgrade -y
-dnf update -y
-dnf repolist
+sudo dnf upgrade -y
+sudo dnf update -y
 dnf repolist all
 
 
@@ -14,17 +12,17 @@ PUNTO 2.
 dnf search bashtop
 
 PUNTO 3.
-dnf install snapd
+sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
+sudo dnf install snapd
 systemctl enable --now snapd.socket
 systemctl is-enabled snapd.socket
 snap install bashtop
 snap run bashtop
 
-
 PUNTO 4. 
 snap list
 snap remove bashtop
-dnf remove snapd
+sudo dnf remove snapd
 
 
 PUNTO 5.

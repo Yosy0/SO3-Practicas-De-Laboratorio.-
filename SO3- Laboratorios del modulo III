@@ -1,0 +1,9 @@
+Pactica 1.
+Comandos utilizados:
+Parte 1:
+sudo nano /etc/default/grub
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+rw init=/bin/bash
+passwd rroot
+touch /.autorelabel
+exec /sbin/init

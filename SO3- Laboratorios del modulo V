@@ -1,0 +1,52 @@
+Practica 3, comandos usados:
+sudo yum install httpd
+systemctl enable httpd
+systemctl start httpd
+
+cd /var/www/html
+
+nano index.html
+
+
+<html>
+<h1>SERVER 1 10.0.0.105</h1>
+</html>
+
+<html>
+<h1>SERVER 2 10.0.0.209</h1>
+</html>
+
+curl localhost
+-------------------------------------------------------
+
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --reload
+
+sudo yum install keepalived 
+
+sudo nano /etc/keepalived/keepalived.conf
+
+
+vrrp_instance VI_1 {
+    state MASTER
+    interface ens160
+    virtual_router_id 51
+    priority 100
+    advert_int 1
+
+    authentication {
+        auth_type PASS
+        auth_pass 1230
+    }
+
+    virtual_ipaddress {
+        10.0.0.100
+    }
+
+sudo systemctl enable --now keepalived
+sudo systemctl start keepalived
+
+sudo firewall-cmd --add-rich-rule='rule protocol value="vrrp" accept' --permanent
+sudo firewall-cmd --reload
+
+sudo systemctl restart keepalived
